@@ -14,7 +14,7 @@ const translations = {
         "hero": {
             "title": "Raphaël Ribes",
             "subtitle": "Bioinformatics Student",
-            "description": "Driven by a dual passion for technology and biology, I am a curious and autonomous learner who thrives on mastering new skills. I enjoy getting in the guts of complex systems to understand how they function, allowing me to find innovative solutions from a fresh perspective.",
+            "description": "Driven by a passion for technology and biology, I am a curious and autonomous learner who thrives on mastering new skills. I enjoy getting in the guts of complex systems to understand how they function, allowing me to find innovative solutions from a fresh perspective. I am dedicated to pushing these boundaries to ensure greater and easier reproducibility in science.",
             "cta": "Download CV"
         },
         "experience": {
@@ -146,7 +146,7 @@ const translations = {
         "hero": {
             "title": "Raphaël Ribes",
             "subtitle": "Étudiant en Bioinformatique",
-            "description": "Passionné par la technologie et la biologie je suis un esprit curieux et autonome, toujours désireux de maîtriser de nouvelles compétences. J'aime comprendre comment les choses sont conçues et fonctionnent afin de concevoir des solutions innovantes sous un angle nouveau.",
+            "description": "Passionné par la technologie et la biologie, je suis un apprenant curieux et autonome qui s'épanouit dans l'acquisition de nouvelles compétences. J'aime aller au fond des systèmes complexes pour comprendre leur fonctionnement, ce qui me permet de trouver des solutions innovantes avec un regard neuf. Je m'engage à repousser les limites pour assurer une reproductibilité plus grande et plus accessible en science.",
             "cta": "Télécharger CV"
         },
         "experience": {
