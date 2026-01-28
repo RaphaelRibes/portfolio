@@ -8,6 +8,7 @@ const translations = {
             "volunteering": "Volunteering",
             "conferences": "Conferences",
             "skills": "Skills",
+            "projects": "Projects",
             "contact": "Contact"
         },
         "hero": {
@@ -99,6 +100,25 @@ const translations = {
             "human": "French (Native), English (C2), Teamwork, Public Speaking, Scientific Popularization, Mentoring, Technical Writing",
             "academic": "Data Analysis, Microbiology, Molecular Biology, Cellular Biology, Physiology, Biochemistry, Microbial Ecology"
         },
+        "projects": {
+            "title": "Projects",
+            "items": [
+                {
+                    "title": "Pixitainer",
+                    "subtitle": "Pixi Extension for Apptainer Containers",
+                    "description": "Bridge the gap between fast-paced Pixi development and robust Apptainer production environments. Freeze your environment into a production-ready container with a single command: pixi containerize",
+                    "features": [
+                        { "icon": "fa-rocket", "text": "Seamless Mode", "detail": "Run commands through the container as if pixi was not even there" },
+                        { "icon": "fa-snowflake", "text": "Frozen Environments", "detail": "Locks dependencies perfectly using your pixi.lock" },
+                        { "icon": "fa-cogs", "text": "Customizable", "detail": "Choose your base image (Ubuntu, etc.) and specific environments" }
+                    ],
+                    "github_url": "https://github.com/RaphaelRibes/pixitainer",
+                    "prefix_url": "https://prefix.dev/channels/raphaelribes/packages/pixitainer",
+                    "pixi_url": "https://pixi.prefix.dev/latest/",
+                    "tech": ["Apptainer", "Singularity", "Pixi", "Reproducibility", "HPC"]
+                }
+            ]
+        },
         "contact": {
             "title": "Contact",
             "email": "raphael.ribes.etu@umontpellier.fr",
@@ -120,6 +140,7 @@ const translations = {
             "volunteering": "Bénévolat",
             "conferences": "Conférences",
             "skills": "Compétences",
+            "projects": "Projets",
             "contact": "Contact"
         },
         "hero": {
@@ -210,6 +231,25 @@ const translations = {
             "soft": "Français (Natif), Anglais (C2), Mentorat, Travail d'équipe, Vulgarisation scientifique, Rédaction technique",
             "human": "Français (Natif), Anglais (C2), Mentorat, Travail d'équipe, Vulgarisation scientifique, Rédaction technique",
             "academic": "Analyse de données, Microbiologie, Physiologie, Biologie moléculaire, Biologie cellulaire, Biochimie, Écologie microbienne"
+        },
+        "projects": {
+            "title": "Projets",
+            "items": [
+                {
+                    "title": "Pixitainer",
+                    "subtitle": "Extension Pixi pour Conteneurs Apptainer",
+                    "description": "Combinez le développement rapide avec Pixi et la robustesse d'Apptainer pour la production. Gelez votre environnement dans un conteneur prêt pour la production avec une seule commande : pixi containerize",
+                    "features": [
+                        { "icon": "fa-rocket", "text": "Mode Transparent", "detail": "Exécutez des commandes via le conteneur comme si pixi n'était pas là" },
+                        { "icon": "fa-snowflake", "text": "Environnements Gelés", "detail": "Verrouille parfaitement les dépendances via votre pixi.lock" },
+                        { "icon": "fa-cogs", "text": "Personnalisable", "detail": "Choisissez votre image de base (Ubuntu, etc.) et environnements spécifiques" }
+                    ],
+                    "github_url": "https://github.com/RaphaelRibes/pixitainer",
+                    "prefix_url": "https://prefix.dev/channels/raphaelribes/packages/pixitainer",
+                    "pixi_url": "https://pixi.prefix.dev/latest/",
+                    "tech": ["Apptainer", "Singularity", "Pixi", "Reproducibility", "HPC"]
+                }
+            ]
         },
         "contact": {
             "title": "Contact",

@@ -82,12 +82,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // 3.5 GESTION DU MENU DÉROULANT PROJETS
+        if (t.projects && t.projects.items) {
+            const projectsDropdown = document.getElementById('projects-dropdown-menu');
+            if (projectsDropdown) {
+                projectsDropdown.innerHTML = t.projects.items.map((item, index) => {
+                    return `<a href="#projects-list-item-${index}">${item.title}</a>`;
+                }).join('');
+            }
+        }
+
         // 4. Rendu des compétences (Style Cartes Modernes)
         if (t.skills) {
             renderSkillsCards(t.skills);
         }
 
-        // 5. Mise à jour des liens sociaux
+        // 5. Rendu des projets
+        if (t.projects) {
+            renderProjects(t.projects.items);
+        }
+
+        // 6. Mise à jour des liens sociaux
         if (t.contact) {
             updateLink('linkedin-link', t.contact.linkedin_url);
             updateLink('github-link', "https://github.com/" + t.contact.github);
@@ -214,6 +229,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         container.innerHTML = htmlContent;
+    }
+
+    function renderProjects(items) {
+        const container = document.getElementById('projects-list');
+        if (!container) return;
+
+        container.innerHTML = items.map((project, index) => {
+            // Features list
+            const featuresHTML = project.features.map(f => `
+                <div class="project-feature">
+                    <i class="fas ${f.icon}"></i>
+                    <div class="feature-content">
+                        <span class="feature-title">${f.text}</span>
+                        <span class="feature-detail">${f.detail}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Tech tags
+            const techHTML = project.tech.map(t =>
+                `<span class="project-tech-tag">${t}</span>`
+            ).join('');
+
+            return `
+                <div class="project-card" id="projects-list-item-${index}">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <div>
+                            <h3 class="project-title">${project.title}</h3>
+                            <p class="project-subtitle">${project.subtitle}</p>
+                        </div>
+                    </div>
+                    
+                    <p class="project-description">${project.description}</p>
+                    
+                    <div class="project-features">
+                        ${featuresHTML}
+                    </div>
+
+                    <div class="project-tech-tags">
+                        ${techHTML}
+                    </div>
+
+                    <div class="project-links">
+                        <a href="${project.github_url}" target="_blank" class="project-link github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="${project.prefix_url}" target="_blank" class="project-link prefix">
+                            <i class="fas fa-box"></i> prefix.dev
+                        </a>
+                        <a href="${project.pixi_url}" target="_blank" class="project-link pixi">
+                            <i class="fas fa-external-link-alt"></i> Pixi Docs
+                        </a>
+                    </div>
+                </div>
+            `;
+        }).join('');
     }
 
     // --- GESTION DU BOUTON "BACK TO TOP" (NOUVEAU) ---

@@ -20,6 +20,16 @@
         <div class="nav-links">
             <a href="#home" data-i18n="nav.home">Home</a>
             <a href="#skills" data-i18n="nav.skills">Skills</a>
+
+            <div class="dropdown">
+                <button class="dropbtn">
+                    <span data-i18n="nav.projects">Projects</span>
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content" id="projects-dropdown-menu">
+                </div>
+            </div>
+
             <a href="#experience" data-i18n="nav.experience">Experience</a>
             <a href="#education" data-i18n="nav.education">Education</a>
 
@@ -59,6 +69,11 @@
     <section id="skills" class="section">
         <h2 class="section-title" data-i18n="skills.title">Skills</h2>
         <div id="skills-network"></div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2 class="section-title" data-i18n="projects.title">Projects</h2>
+        <div class="projects-grid" id="projects-list"></div>
     </section>
 
     <section id="experience" class="section">

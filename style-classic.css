@@ -414,6 +414,219 @@ body {
     color: #e9d5ff;
 }
 
+/* --- PROJECT CARDS --- */
+.projects-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--timeline-line);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-color), #a855f7, #ec4899);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.project-card:hover::before {
+    opacity: 1;
+}
+
+.project-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, var(--accent-color), #6366f1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.project-icon i {
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.project-title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.project-subtitle {
+    margin: 0.3rem 0 0 0;
+    font-size: 0.95rem;
+    color: var(--accent-color);
+    font-weight: 500;
+}
+
+.project-description {
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.project-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-color);
+    border-radius: 10px;
+    border: 1px solid var(--timeline-line);
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.project-feature:hover {
+    transform: translateX(5px);
+    border-color: var(--accent-color);
+}
+
+.project-feature>i {
+    font-size: 1.2rem;
+    color: var(--accent-color);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.feature-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.feature-title {
+    font-weight: 600;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.feature-detail {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    line-height: 1.4;
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.project-tech-tag {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent-color) 0%, #6366f1 100%);
+    color: #fff;
+    letter-spacing: 0.3px;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 0.5rem;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.project-link.github {
+    background: #24292e;
+    color: #fff;
+}
+
+.project-link.github:hover {
+    background: transparent;
+    border-color: #24292e;
+    color: #24292e;
+}
+
+[data-theme="dark"] .project-link.github:hover {
+    border-color: #fff;
+    color: #fff;
+}
+
+.project-link.prefix {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b);
+    color: #1a1a1a;
+}
+
+.project-link.prefix:hover {
+    background: transparent;
+    border-color: #f59e0b;
+    color: #f59e0b;
+}
+
+.project-link.pixi {
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.project-link.pixi:hover {
+    background: transparent;
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.project-link i {
+    font-size: 1rem;
+}
+
 /* --- Footer & Misc --- */
 
 .xp-mode-btn {
