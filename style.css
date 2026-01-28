@@ -1,0 +1,690 @@
+/* Windows XP Theme */
+body {
+    background: url('images/bliss.png') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'Tahoma', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100vh;
+    cursor: default;
+}
+
+/* Desktop Layout */
+.desktop {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 30px);
+    overflow: hidden;
+}
+
+/* Desktop Icons */
+.desktop-icons {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    z-index: 10;
+}
+
+.desktop-icon {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    font-family: 'Tahoma', sans-serif;
+    font-size: 11px;
+    text-shadow: 1px 1px 1px black;
+    touch-action: none;
+    user-select: none;
+    left: 10px;
+}
+
+.desktop-icon img {
+    /* Style pour les images PNG sur le bureau */
+    width: 48px;
+    height: 48px;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    transition: filter 0.2s;
+    object-fit: contain;
+}
+
+.desktop-icon i {
+    /* Fallback si icônes FontAwesome utilisées ailleurs */
+    font-size: 32px;
+    margin-bottom: 5px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+    transition: filter 0.2s;
+}
+
+.desktop-icon:hover span {
+    background-color: #0B76BA;
+    border: 1px dotted white;
+}
+
+.desktop-icon:hover img,
+.desktop-icon:hover i {
+    filter: brightness(1.2) drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Window Overrides & Customization */
+.window {
+    position: absolute;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    background-color: #ECE9D8;
+    top: 20px;
+    left: 20px;
+    width: 600px;
+    max-width: 90vw;
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+}
+
+.window.closed {
+    display: none;
+}
+
+.window-body {
+    padding: 15px;
+    background-color: #ECE9D8;
+    overflow-y: auto;
+    flex: 1;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    color: #000;
+}
+
+p {
+    color: #000;
+    font-size: 12px;
+}
+
+a {
+    color: #0000FF;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #000080;
+}
+
+/* Hero Section */
+.hero-content {
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.hero-content h2 {
+    font-size: 16px;
+    font-weight: normal;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Timelines */
+.timeline {
+    border-left: 2px solid #999;
+    padding-left: 15px;
+    margin-left: 5px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border: 2px solid #0055EA;
+    border-radius: 50%;
+}
+
+.timeline-date {
+    font-size: 11px;
+    font-weight: bold;
+    color: #0055EA;
+    margin-bottom: 2px;
+}
+
+.timeline-content h3 {
+    font-size: 14px;
+    margin-bottom: 2px;
+}
+
+/* XP Logo Styles */
+.xp-timeline-logo {
+    float: right;
+    max-width: 60px;
+    max-height: 60px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    border: 1px solid #999;
+    background: #fff;
+    padding: 2px;
+}
+
+/* Clearfix for the float inside timeline content */
+.timeline-content::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.timeline-location {
+    font-size: 11px;
+    font-style: italic;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+/* --- SKILLS EXPLORER STYLE (NOUVEAU) --- */
+#skills-network {
+    width: 100%;
+    height: 400px;
+    /* Hauteur fixe pour scroller dedans */
+    background-color: #fff;
+    border: 2px solid #888;
+    /* Bordure "Inset" */
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+    padding: 0;
+    /* Important pour que l'explorer touche les bords */
+}
+
+.xp-explorer-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.xp-sidebar {
+    width: 160px;
+    min-width: 160px;
+    background-color: #fff;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+}
+
+.xp-sidebar-header {
+    background: linear-gradient(to right, #ECE9D8 0%, #fff 100%);
+    padding: 8px 10px;
+    font-weight: bold;
+    font-size: 12px;
+    color: #444;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+}
+
+.xp-tree-view {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tree-item {
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #000;
+}
+
+.tree-item i {
+    font-size: 14px;
+}
+
+.tree-item:hover {
+    text-decoration: underline;
+    color: #0000FF;
+}
+
+.tree-item.active {
+    background-color: #316AC5;
+    color: white;
+    text-decoration: none;
+}
+
+/* Change l'icône dossier en "ouvert" ou juste plus brillant quand actif */
+.tree-item.active i {
+    filter: brightness(1.2);
+}
+
+.xp-main-view {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.xp-folder-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    align-content: flex-start;
+}
+
+.xp-file {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.xp-file i {
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
+    margin-bottom: 5px;
+}
+
+.xp-file:hover i {
+    filter: brightness(1.1) drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+}
+
+.xp-file:hover .filename {
+    background-color: #316AC5;
+    color: white;
+    border-radius: 2px;
+}
+
+.filename {
+    margin-top: 2px;
+    font-size: 11px;
+    font-family: 'Tahoma', sans-serif;
+    word-break: break-word;
+    padding: 2px 4px;
+    color: #000;
+}
+
+/* --- FIN SKILLS EXPLORER --- */
+
+/* Taskbar */
+.taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to bottom, #245EDC 0%, #3E87EB 10%, #245EDC 100%);
+    border-top: 1px solid #003399;
+    display: flex;
+    align-items: center;
+    padding: 0 2px;
+    z-index: 10000;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.start-button {
+    background: url('images/windows.ico') no-repeat 5px center, linear-gradient(to bottom, #3C8018 0%, #4CA922 100%);
+    background-size: 20px auto;
+    padding: 2px 15px 2px 35px;
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 16px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    border: 2px solid #fff;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    height: 30px;
+    margin-right: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.start-button:active {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.taskbar-divider {
+    width: 2px;
+    height: 20px;
+    background: rgba(0, 0, 0, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 0 5px;
+}
+
+.quick-launch {
+    display: flex;
+    align-items: center;
+}
+
+.quick-launch button {
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 2px 5px;
+}
+
+.quick-launch button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.tasks {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 5px;
+    overflow: hidden;
+}
+
+.task-button {
+    background: linear-gradient(to bottom, #3E87EB 0%, #245EDC 100%);
+    color: white;
+    text-decoration: none;
+    padding: 3px 10px;
+    margin-right: 2px;
+    border-radius: 3px;
+    font-size: 11px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.3);
+    flex-grow: 1;
+    max-width: 200px;
+    min-width: 80px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.task-button:hover {
+    background: linear-gradient(to bottom, #5CA3FF 0%, #3E87EB 100%);
+}
+
+.task-button:active {
+    background: #1C48A8;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.tray {
+    background: #0B76BA;
+    border: 1px solid #fff;
+    border-top: 1px solid #888;
+    border-left: 1px solid #888;
+    padding: 2px 10px;
+    color: white;
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    height: 22px;
+    margin-left: 5px;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Conférences Video Style */
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto 20px auto;
+    border: 2px solid #0055EA;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.2);
+    background: #FFF;
+    padding: 3px;
+}
+
+.video-link {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+    image-rendering: pixelated;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.play-overlay i {
+    color: white;
+    font-size: 60px;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.7));
+    transition: transform 0.3s ease;
+}
+
+.video-link:hover .play-overlay {
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.video-link:hover .play-overlay i {
+    transform: scale(1.1);
+}
+
+/* Controls */
+.controls {
+    display: none;
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+    .quick-launch {
+        display: none;
+    }
+
+    .window {
+        width: 95% !important;
+        left: 2.5% !important;
+        top: 5px !important;
+        max-height: 85vh;
+    }
+
+    body {
+        background-size: cover;
+        background-position: center;
+    }
+
+    /* Adapter l'explorer sur mobile */
+    .xp-sidebar {
+        width: 100px;
+        min-width: 100px;
+    }
+
+    .xp-file {
+        width: 60px;
+    }
+}
+
+/* --- Windows XP Cursors --- */
+html,
+body {
+    cursor: url('images/arrow.cur'), auto !important;
+}
+
+a,
+button,
+.pointer,
+.task-button,
+.start-button,
+.desktop-icon,
+.title-bar-controls button,
+.xp-mode-btn,
+.tree-item,
+.xp-file {
+    cursor: url('https://raw.githubusercontent.com/LouanBen/windows-xp-cursors/master/cursors/hand.cur'), pointer !important;
+}
+
+/* --- Minesweeper Styles --- */
+#minesweeper-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 20px);
+    grid-template-rows: repeat(9, 20px);
+    background-color: #c0c0c0;
+}
+
+.ms-cell {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    border: 2px solid;
+    border-color: #fff #808080 #808080 #fff;
+    /* Outset look */
+    background-color: #c0c0c0;
+    font-family: 'Tahoma', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: default;
+    user-select: none;
+}
+
+.ms-cell.revealed {
+    border: 1px solid #808080;
+    /* Flat look */
+    border-right: none;
+    border-bottom: none;
+    background-color: #c0c0c0;
+}
+
+.ms-cell.mine {
+    background-color: red;
+    border: 1px solid #808080;
+}
+
+.ms-cell.flag {
+    color: red;
+}
+
+/* Number Colors */
+.ms-cell[data-num="1"] {
+    color: blue;
+}
+
+.ms-cell[data-num="2"] {
+    color: green;
+}
+
+.ms-cell[data-num="3"] {
+    color: red;
+}
+
+.ms-cell[data-num="4"] {
+    color: darkblue;
+}
+
+.ms-cell[data-num="5"] {
+    color: darkred;
+}
+
+.ms-cell[data-num="6"] {
+    color: teal;
+}
+
+.ms-cell[data-num="7"] {
+    color: black;
+}
+
+.ms-cell[data-num="8"] {
+    color: gray;
+}
+
+/* --- Logo Container Styles --- */
+.logo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* --- XP Timeline Logos --- */
+.xp-timeline-logos-container {
+    float: right;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+.xp-timeline-logo-small {
+    max-height: 40px;
+    width: auto;
+    border: 1px solid #999;
+    background-color: #fff;
+    padding: 2px;
+    object-fit: contain;
+}
+
+
+/* Positions Icônes */
+#desktop-linkedin {
+    top: 10px;
+}
+
+#desktop-github {
+    top: 110px;
+}
+
+#desktop-gitlab {
+    top: 210px;
+}
+
+#desktop-steam {
+    top: 310px;
+}
+
+#desktop-email {
+    top: 410px;
+}
+
+#desktop-cv {
+    top: 510px;
+}
+
+/* Ajout de la position du démineur */
+#desktop-minesweeper {
+    top: 610px;
+}
