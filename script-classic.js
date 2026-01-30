@@ -123,10 +123,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById(id);
         if (!container) return;
 
+        // Detect if this is the conferences section
+        const isConferences = id === 'conferences-list';
+
         container.innerHTML = items.map((item, index) => {
-            // Génération du bloc vidéo si les données existent
+            // Génération du bloc vidéo uniquement si ce n'est PAS les conférences
             let videoHTML = '';
-            if (item.image && item.video) {
+            if (!isConferences && item.image && item.video) {
                 videoHTML = `
                     <div class="timeline-video-container">
                         <a href="https://www.youtube.com/watch?v=${item.video}" target="_blank" class="video-link">
@@ -148,6 +151,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 logoHTML = `<img src="${item.logo}" alt="Logo" class="timeline-logo">`;
             }
 
+            // Pour les conférences, le lien pointe vers la page de détail
+            let linkHTML = '';
+            if (isConferences && item.slug) {
+                linkHTML = `
+                    <a href="conference.html?slug=${item.slug}" class="timeline-link">
+                        View details <i class="fas fa-arrow-right"></i>
+                    </a>`;
+            } else if (item.url) {
+                linkHTML = `
+                    <a href="${item.url}" target="_blank" class="timeline-link">
+                        View details <i class="fas fa-arrow-right"></i>
+                    </a>`;
+            }
+
             // Ajout de l'ID unique sur la div principale : id="${id}-item-${index}"
             return `
             <div class="timeline-item" id="${id}-item-${index}">
@@ -167,10 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     ${videoHTML}
                     
-                    ${item.url ? `
-                    <a href="${item.url}" target="_blank" class="timeline-link">
-                        View details <i class="fas fa-arrow-right"></i>
-                    </a>` : ''}
+                    ${linkHTML}
                 </div>
             </div>
             `;

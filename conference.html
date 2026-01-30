@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference - Raphaël Ribes</title>
+    <link rel="stylesheet" href="style-classic.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo" style="font-weight: bold; font-size: 1.2rem; text-decoration: none;">RR</a>
+        <div class="nav-links">
+            <a href="index.html#home" data-i18n="nav.home">Home</a>
+            <a href="index.html#skills" data-i18n="nav.skills">Skills</a>
+            <a href="index.html#projects" data-i18n="nav.projects">Projects</a>
+            <a href="index.html#experience" data-i18n="nav.experience">Experience</a>
+            <a href="index.html#education" data-i18n="nav.education">Education</a>
+            <a href="index.html#conferences" data-i18n="nav.conferences">Conferences</a>
+        </div>
+        <div class="controls">
+            <button id="lang-toggle" class="control-btn">FR</button>
+            <button id="theme-toggle" class="control-btn"><i class="fas fa-sun"></i></button>
+        </div>
+    </nav>
+
+    <main class="conference-detail-page">
+        <div class="conference-detail-container">
+            <a href="index.html#conferences" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span data-i18n-back-en="Back to Main Page" data-i18n-back-fr="Retour à la page principale">Back to
+                    Conferences</span>
+            </a>
+
+            <article class="conference-article" id="conference-content">
+                <!-- Content will be injected by JavaScript -->
+            </article>
+        </div>
+    </main>
+
+    <footer style="text-align: center; padding: 3rem 1rem; opacity: 0.9;">
+        <p>&copy; 2025 Raphaël Ribes</p>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="script-conference.js"></script>
+</body>
+
+</html>

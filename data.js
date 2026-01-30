@@ -80,13 +80,15 @@ const translations = {
             ]
         },
         "conferences": {
-            "title": "Reproducibility within Reach",
+            "title": "Conferences",
             "items": [
                 {
                     "date": "Oct 30, 2025",
                     "title": "Reproducibility within Reach",
                     "location": "Montpellier",
-                    "description": "Addressed the challenges of reproducibility ('It Works on My Machine'). Introduced Pixi as a fast, user-friendly, and isolated tool that combines features from Conda, Cargo, and CMake. Proposed 'Pixigularity' for complete environment portability.",
+                    "slug": "reproducibility-within-reach",
+                    "description": "Addressed the challenges of reproducibility (\"It Works on My Machine\"). Introduced Pixi as a fast, user-friendly, and isolated tool that combines features from Conda, Cargo, and CMake.",
+                    "fullDescription": "This talk explored the imperative of reproducibility in computational science. Starting from the infamous \"It Works on My Machine\" problem—caused by version mismatches and dependency conflicts. I reviewed current solutions (requirements.txt, Poetry, Conda, Singularity, GUIX) and their trade-offs. I then introduced Pixi, a tool combining multi-language package management (like Conda), lockfile-based project management (like uv and Cargo), and task automation (like Makefile). The presentation included a live demonstration analyzing FASTQ files and building k-mer graphs, and concluded with a discussion on long-term deployment challenges.",
                     "image": "images/conference_slide.png",
                     "url": "https://gitlab.in2p3.fr/mbi/mbi/-/tree/master/20251030_Pixi?ref_type=heads",
                     "video": "gWVV1n1Le2w"
@@ -218,7 +220,9 @@ const translations = {
                     "date": "30 Oct 2025",
                     "title": "La reproductibilité à portée de main",
                     "location": "Montpellier",
-                    "description": "A abordé les défis de la reproductibilité ('Ça marche sur ma machine'). Introduction de Pixi comme un outil rapide, convivial et isolé, combinant les fonctionnalités de Conda, Cargo et CMake. Proposition de 'Pixigularity' pour une portabilité complète de l'environnement.",
+                    "slug": "reproducibility-within-reach",
+                    "description": "Aborde les défis de la reproductibilité (\"Ça marche sur ma machine\"). Introduction de Pixi comme un outil rapide, convivial et isolé, combinant les fonctionnalités de Conda, Cargo et CMake.",
+                    "fullDescription": "Cette présentation a exploré l'impératif de la reproductibilité en science. Partant du fameux problème \"Ça marche sur ma machine\", causé par les mauvaises versions et conflits de dépendances. J'ai passé en revue les solutions actuelles (requirements.txt, Poetry, Conda, Singularity, GUIX) et leurs compromis. J'ai ensuite présenté Pixi, un outil combinant la gestion de paquets multi-langages (comme Conda et pypi), la gestion de projet par lockfile (comme uv et Cargo), et l'automatisation des tâches (comme Makefile). La présentation incluait une démonstration live d'analyse de fichiers FASTQ et de construction de graphes de k-mers, et s'est conclue par une discussion sur les limitations du déploiement à long terme.",
                     "image": "images/conference_slide.png",
                     "url": "https://gitlab.in2p3.fr/mbi/mbi/-/tree/master/20251030_Pixi?ref_type=heads",
                     "video": "gWVV1n1Le2w"
