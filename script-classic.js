@@ -170,21 +170,24 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="timeline-item" id="${id}-item-${index}">
                 <div class="timeline-marker"></div>
                 <div class="timeline-content">
-                    <span class="timeline-date">${item.date}</span>
-                    <h3>${item.title}</h3>
-                    
-                    ${logoHTML}
+                    <div class="timeline-content-wrapper">
+                        <div class="timeline-text">
+                            <span class="timeline-date">${item.date}</span>
+                            <h3>${item.title}</h3>
 
-                    ${item.location ? `
-                    <div class="timeline-location">
-                        <i class="fas fa-map-marker-alt"></i> ${item.location}
-                    </div>` : ''}
-                    
-                    <p>${item.description}</p>
+                            ${item.location ? `
+                            <div class="timeline-location">
+                                <i class="fas fa-map-marker-alt"></i> ${item.location}
+                            </div>` : ''}
+                            
+                            <p>${item.description}</p>
 
-                    ${videoHTML}
-                    
-                    ${linkHTML}
+                            ${videoHTML}
+                            
+                            ${linkHTML}
+                        </div>
+                        ${logoHTML}
+                    </div>
                 </div>
             </div>
             `;
