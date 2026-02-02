@@ -1140,3 +1140,211 @@ footer {
         padding: 1rem;
     }
 }
+
+/* ===========================================
+   CONFERENCE CARDS (HOME PAGE)
+   =========================================== */
+
+.conferences-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+}
+
+.conference-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px var(--shadow-color);
+    border: 1px solid var(--timeline-line);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.conference-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-color), #a855f7, #ec4899);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.conference-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px var(--shadow-color);
+    border-color: var(--accent-color);
+}
+
+.conference-card:hover::before {
+    opacity: 1;
+}
+
+/* Card Header */
+.conf-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(168, 85, 247, 0.08) 100%);
+    border-bottom: 1px solid var(--timeline-line);
+}
+
+[data-theme="light"] .conf-card-header {
+    background: linear-gradient(135deg, rgba(36, 94, 220, 0.06) 0%, rgba(168, 85, 247, 0.06) 100%);
+}
+
+.conf-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--accent-color), #6366f1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.conf-icon i {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.conf-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.conf-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.conf-badge.type {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #6366f1 100%);
+    color: #fff;
+}
+
+.conf-badge.video {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: #fff;
+}
+
+.conf-badge.video i {
+    font-size: 0.7rem;
+}
+
+/* Card Body */
+.conf-card-body {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.conf-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.conf-date i {
+    font-size: 0.8rem;
+}
+
+.conf-title {
+    margin: 0 0 0.75rem 0;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.conf-location {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    margin-bottom: 1rem;
+    font-style: italic;
+}
+
+.conf-location i {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.conf-description {
+    margin: 0;
+    color: var(--text-color);
+    opacity: 0.85;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+/* Card Footer */
+.conf-card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--timeline-line);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+[data-theme="dark"] .conf-card-footer {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.conf-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.conf-link i {
+    transition: transform 0.2s ease;
+}
+
+.conf-link:hover {
+    gap: 12px;
+}
+
+.conf-link:hover i {
+    transform: translateX(4px);
+}
+
+/* Responsive */
+@media (max-width: 400px) {
+    .conferences-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .conf-card-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+}

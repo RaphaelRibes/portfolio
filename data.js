@@ -83,6 +83,15 @@ const translations = {
             "title": "Conferences",
             "items": [
                 {
+                    "date": "Feb 2-3, 2026",
+                    "title": "Pixi Workshop - Montpellier Omics Days (14th Edition)",
+                    "location": "Montpellier",
+                    "slug": "pixi-workshop-mods2026",
+                    "description": "A hands-on workshop to master Pixi, the next-generation package and environment manager. From project initialization to containerization with Pixitainer.",
+                    "fullDescription": "This practical workshop guides participants through the fundamentals of Pixi to advanced use cases, including workspace containerization with Pixitainer.\n\n**Learning Objectives:**\n- Initialize a Pixi project\n- Manage conda and PyPI dependencies\n- Create and automate simple tasks\n- Understand the structure of a real project\n- Containerize a project with Pixitainer\n\n**Exercises:**\n- Exercise 1: Pédiluve (Getting started)\n- Exercise 2: Grand Bassin (Advanced usage)",
+                    "url": "https://github.com/RaphaelRibes/atelierpixiMODS2026"
+                },
+                {
                     "date": "Oct 30, 2025",
                     "title": "Reproducibility within Reach",
                     "location": "Montpellier",
@@ -216,6 +225,15 @@ const translations = {
         "conferences": {
             "title": "Conférences",
             "items": [
+                {
+                    "date": "2-3 Fév 2026",
+                    "title": "Atelier Pixi - Montpellier Omics Days (14ème édition)",
+                    "location": "Montpellier",
+                    "slug": "pixi-workshop-mods2026",
+                    "description": "Un atelier pratique pour maîtriser Pixi, le gestionnaire d'environnements et de packages nouvelle génération. De l'initialisation de projet à la conteneurisation avec Pixitainer.",
+                    "fullDescription": "Cet atelier pratique guide les participants à travers les fondamentaux de Pixi jusqu'aux cas d'utilisation avancés, incluant la conteneurisation de workspaces avec Pixitainer.\n\n**Objectifs pédagogiques :**\n- Initialiser un projet Pixi\n- Gérer des dépendances conda et PyPI\n- Créer et automatiser une tâche simple\n- Comprendre la structure d'un projet réel\n- Conteneuriser un projet avec Pixitainer\n\n**Exercices :**\n- Exercice 1 : Pédiluve (Prise en main)\n- Exercice 2 : Grand Bassin (Usage avancé)",
+                    "url": "https://github.com/RaphaelRibes/atelierpixiMODS2026"
+                },
                 {
                     "date": "30 Oct 2025",
                     "title": "La reproductibilité à portée de main",

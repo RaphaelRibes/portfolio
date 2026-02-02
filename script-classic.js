@@ -67,17 +67,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // 2. Rendu des listes chronologiques (Expérience, Education, etc.)
-        ['experience', 'education', 'volunteering', 'conferences'].forEach(sec => {
+        ['experience', 'education', 'volunteering'].forEach(sec => {
             if (t[sec]) renderTimeline(sec + '-list', t[sec].items);
         });
+
+        // 2.5 Rendu des conférences (nouveau style cartes)
+        if (t.conferences) {
+            renderConferences(t.conferences.items);
+        }
 
         // 3. GESTION DU MENU DÉROULANT CONFÉRENCES
         if (t.conferences && t.conferences.items) {
             const dropdownContainer = document.getElementById('conf-dropdown-menu');
             if (dropdownContainer) {
                 dropdownContainer.innerHTML = t.conferences.items.map((item, index) => {
-                    // Crée un lien vers l'ancre générée dans renderTimeline (conferences-list-item-X)
-                    return `<a href="#conferences-list-item-${index}">${item.title}</a>`;
+                    return `<a href="#conference-card-${index}">${item.title}</a>`;
                 }).join('');
             }
         }
@@ -300,6 +304,55 @@ document.addEventListener('DOMContentLoaded', () => {
                         </a>
                         <a href="${project.pixi_url}" target="_blank" class="project-link pixi">
                             <i class="fas fa-external-link-alt"></i> Pixi Docs
+                        </a>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function renderConferences(items) {
+        const container = document.getElementById('conferences-list');
+        if (!container) return;
+
+        container.innerHTML = items.map((conf, index) => {
+            // Determine icon based on type
+            const isWorkshop = conf.title.toLowerCase().includes('workshop') || conf.title.toLowerCase().includes('atelier');
+            const icon = isWorkshop ? 'fa-chalkboard-teacher' : 'fa-microphone-alt';
+            const typeLabel = isWorkshop ? 'Workshop' : 'Talk';
+
+            // Video badge if available
+            const videoBadge = conf.video ? `
+                <span class="conf-badge video">
+                    <i class="fab fa-youtube"></i> Recording
+                </span>` : '';
+
+            return `
+                <div class="conference-card" id="conference-card-${index}">
+                    <div class="conf-card-header">
+                        <div class="conf-icon">
+                            <i class="fas ${icon}"></i>
+                        </div>
+                        <div class="conf-badges">
+                            <span class="conf-badge type">${typeLabel}</span>
+                            ${videoBadge}
+                        </div>
+                    </div>
+                    
+                    <div class="conf-card-body">
+                        <span class="conf-date">
+                            <i class="fas fa-calendar-alt"></i> ${conf.date}
+                        </span>
+                        <h3 class="conf-title">${conf.title}</h3>
+                        <div class="conf-location">
+                            <i class="fas fa-map-marker-alt"></i> ${conf.location}
+                        </div>
+                        <p class="conf-description">${conf.description}</p>
+                    </div>
+
+                    <div class="conf-card-footer">
+                        <a href="conference.html?slug=${conf.slug}" class="conf-link">
+                            View details <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>

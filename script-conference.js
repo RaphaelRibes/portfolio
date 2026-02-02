@@ -41,6 +41,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Fonctions Principales ---
 
+    /**
+     * Convert simple markdown syntax to HTML
+     * Supports: **bold**, newlines
+     */
+    function simpleMarkdownToHtml(text) {
+        if (!text) return '';
+        // Convert **bold** to <strong>bold</strong>
+        let html = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        // Convert newlines to <br>
+        html = html.replace(/\n/g, '<br>');
+        return html;
+    }
+
     function applyTheme(theme) {
         html.setAttribute('data-theme', theme);
         localStorage.setItem('theme', theme);
@@ -104,7 +117,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </header>
 
             <div class="conference-body">
-                <p class="conference-description">${conference.fullDescription || conference.description}</p>
+                <p class="conference-description">${simpleMarkdownToHtml(conference.fullDescription || conference.description)}</p>
 
                 ${conference.video ? `
                 <div class="conference-video">
