@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${conference.url ? `
                             <a href="${conference.url}" target="_blank" class="resource-link">
                                 <i class="fab fa-gitlab"></i>
-                                ${lang === 'fr' ? 'Voir les slides et ressources' : 'View slides and resources'}
+                                ${conference.linkText ? conference.linkText : (lang === 'fr' ? 'Voir les slides et ressources' : 'View slides and resources')}
                                 <i class="fas fa-external-link-alt"></i>
                             </a>
                             ` : ''}

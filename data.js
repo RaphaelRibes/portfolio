@@ -101,6 +101,8 @@ const translations = {
                     "banner": "images/logomods.png",
                     "description": "Manager of the intervenants pole for the 14th edition of the Montpellier OMICs Days. Orchestrated speaker interventions and workshops for a successful event.",
                     "fullDescription": "As a manager of the intervenants pole for the Montpellier OMICs Days 2026, I was responsible along with the other poles for coordinating the scientific program. This involved selecting and inviting speakers, organizing workshops, and managing the schedule to ensure a smooth flow of events. The event featured a diverse range of topics from metagenomics to AI in bioinformatics, fostering a rich environment for scientific exchange. \n\nMy role required close collaboration with other poles to align the scientific content with the overall theme and logistics of the conference. The success of the event was marked by high attendance and positive feedback from both participants and speakers.",
+                    "url": "https://montpellier-omics-days.fr/",
+                    "linkText": "Official website",
                     "images": [
                         "images/MOD2026_2.jpg", "images/atelierpixi4.jpeg", "images/MOD2026_3.jpg", "images/MOD2026_4.jpg",
                         "images/MOD2026_5.jpg", "images/MOD2026_6.jpg", "images/MOD2026_7.jpg", "images/MOD2026_8.jpg",
@@ -260,6 +262,8 @@ const translations = {
                     "banner": "images/logomods.png",
                     "description": "Responsable du pôle Intervenants pour la 14ème édition des Montpellier OMICs Days. Orchestration des interventions et ateliers pour un événement réussi.",
                     "fullDescription": "En tant que responsable du pôle intervenants pour les Montpellier OMICs Days 2026, j'étais chargé avec mes colègues de la coordination du programme scientifique avec les scientifiques externes à la promotion. Cela impliquait la sélection et l'invitation des conférenciers, l'organisation des ateliers et la gestion du planning pour assurer un déroulement fluide de l'événement. L'événement a couvert une gamme variée de sujets, de la métagénomique à l'IA en bioinformatique, favorisant un environnement riche pour l'échange scientifique.\n\nMon rôle a nécessité une collaboration étroite avec les autres pôles pour aligner le contenu scientifique avec le thème global et la logistique de la conférence. Le succès de l'événement a été marqué par une forte participation et des retours positifs tant des participants que des intervenants.",
+                    "url": "https://montpellier-omics-days.fr/",
+                    "linkText": "Site officiel",
                     "images": [
                         "images/MOD2026_2.jpg", "images/atelierpixi4.jpeg", "images/MOD2026_3.jpg", "images/MOD2026_4.jpg",
                         "images/MOD2026_5.jpg", "images/MOD2026_6.jpg", "images/MOD2026_7.jpg", "images/MOD2026_8.jpg",
