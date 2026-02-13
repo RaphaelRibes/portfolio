@@ -6,7 +6,7 @@ const translations = {
             "experience": "Experience",
             "education": "Education",
             "volunteering": "Volunteering",
-            "conferences": "Conferences",
+            "conferences": "Scientific Mediation",
             "skills": "Skills",
             "projects": "Projects",
             "contact": "Contact"
@@ -80,7 +80,7 @@ const translations = {
             ]
         },
         "conferences": {
-            "title": "Conferences",
+            "title": "Scientific Mediation",
             "items": [
                 {
                     "date": "Feb 2-3, 2026",
@@ -89,7 +89,23 @@ const translations = {
                     "slug": "pixi-workshop-mods2026",
                     "description": "A hands-on workshop to master Pixi, the next-generation package and environment manager. From project initialization to containerization with Pixitainer.",
                     "fullDescription": "This practical workshop guides participants through the fundamentals of Pixi to advanced use cases, including workspace containerization with Pixitainer.\n\n**Learning Objectives:**\n- Initialize a Pixi project\n- Manage conda and PyPI dependencies\n- Create and automate simple tasks\n- Understand the structure of a real project\n- Containerize a project with Pixitainer\n\n**Exercises:**\n- Exercise 1: Pédiluve (Getting started)\n- Exercise 2: Grand Bassin (Advanced usage)",
-                    "url": "https://github.com/RaphaelRibes/atelierpixiMODS2026"
+                    "url": "https://github.com/RaphaelRibes/atelierpixiMODS2026",
+                    "images": ["images/atelierpixi2.jpeg", "images/atelierpixi3.jpeg", "images/atelierpixi4.jpeg"]
+                },
+                {
+                    "date": "Feb 2-3, 2026",
+                    "title": "Organisation of the Montpellier OMICs Days 2026",
+                    "location": "Montpellier",
+                    "slug": "mods2026-organisation",
+                    "type": "congress",
+                    "banner": "images/logomods.png",
+                    "description": "Manager of the intervenants pole for the 14th edition of the Montpellier OMICs Days. Orchestrated speaker interventions and workshops for a successful event.",
+                    "fullDescription": "As a manager of the intervenants pole for the Montpellier OMICs Days 2026, I was responsible along with the other poles for coordinating the scientific program. This involved selecting and inviting speakers, organizing workshops, and managing the schedule to ensure a smooth flow of events. The event featured a diverse range of topics from metagenomics to AI in bioinformatics, fostering a rich environment for scientific exchange. \n\nMy role required close collaboration with other poles to align the scientific content with the overall theme and logistics of the conference. The success of the event was marked by high attendance and positive feedback from both participants and speakers.",
+                    "images": [
+                        "images/MOD2026_2.jpg", "images/atelierpixi4.jpeg", "images/MOD2026_3.jpg", "images/MOD2026_4.jpg",
+                        "images/MOD2026_5.jpg", "images/MOD2026_6.jpg", "images/MOD2026_7.jpg", "images/MOD2026_8.jpg",
+                        "images/MOD2026_9.jpg", "images/MOD2026_10.jpg", "images/MOD2026_11.jpg"
+                    ]
                 },
                 {
                     "date": "Oct 30, 2025",
@@ -149,7 +165,7 @@ const translations = {
             "experience": "Expérience",
             "education": "Formation",
             "volunteering": "Bénévolat",
-            "conferences": "Conférences",
+            "conferences": "Médiation Scientifique",
             "skills": "Compétences",
             "projects": "Projets",
             "contact": "Contact"
@@ -223,7 +239,7 @@ const translations = {
             ]
         },
         "conferences": {
-            "title": "Conférences",
+            "title": "Médiation Scientifique",
             "items": [
                 {
                     "date": "2-3 Fév 2026",
@@ -232,7 +248,23 @@ const translations = {
                     "slug": "pixi-workshop-mods2026",
                     "description": "Un atelier pratique pour maîtriser Pixi, le gestionnaire d'environnements et de packages nouvelle génération. De l'initialisation de projet à la conteneurisation avec Pixitainer.",
                     "fullDescription": "Cet atelier pratique guide les participants à travers les fondamentaux de Pixi jusqu'aux cas d'utilisation avancés, incluant la conteneurisation de workspaces avec Pixitainer.\n\n**Objectifs pédagogiques :**\n- Initialiser un projet Pixi\n- Gérer des dépendances conda et PyPI\n- Créer et automatiser une tâche simple\n- Comprendre la structure d'un projet réel\n- Conteneuriser un projet avec Pixitainer\n\n**Exercices :**\n- Exercice 1 : Pédiluve (Prise en main)\n- Exercice 2 : Grand Bassin (Usage avancé)",
-                    "url": "https://github.com/RaphaelRibes/atelierpixiMODS2026"
+                    "url": "https://github.com/RaphaelRibes/atelierpixiMODS2026",
+                    "images": ["images/atelierpixi2.jpeg", "images/atelierpixi3.jpeg", "images/atelierpixi4.jpeg"]
+                },
+                {
+                    "date": "2-3 Fév 2026",
+                    "title": "Organisation des Montpellier OMICs Days 2026",
+                    "location": "Montpellier",
+                    "slug": "mods2026-organisation",
+                    "type": "congress",
+                    "banner": "images/logomods.png",
+                    "description": "Responsable du pôle Intervenants pour la 14ème édition des Montpellier OMICs Days. Orchestration des interventions et ateliers pour un événement réussi.",
+                    "fullDescription": "En tant que responsable du pôle intervenants pour les Montpellier OMICs Days 2026, j'étais chargé avec mes colègues de la coordination du programme scientifique avec les scientifiques externes à la promotion. Cela impliquait la sélection et l'invitation des conférenciers, l'organisation des ateliers et la gestion du planning pour assurer un déroulement fluide de l'événement. L'événement a couvert une gamme variée de sujets, de la métagénomique à l'IA en bioinformatique, favorisant un environnement riche pour l'échange scientifique.\n\nMon rôle a nécessité une collaboration étroite avec les autres pôles pour aligner le contenu scientifique avec le thème global et la logistique de la conférence. Le succès de l'événement a été marqué par une forte participation et des retours positifs tant des participants que des intervenants.",
+                    "images": [
+                        "images/MOD2026_2.jpg", "images/atelierpixi4.jpeg", "images/MOD2026_3.jpg", "images/MOD2026_4.jpg",
+                        "images/MOD2026_5.jpg", "images/MOD2026_6.jpg", "images/MOD2026_7.jpg", "images/MOD2026_8.jpg",
+                        "images/MOD2026_9.jpg", "images/MOD2026_10.jpg", "images/MOD2026_11.jpg"
+                    ]
                 },
                 {
                     "date": "30 Oct 2025",

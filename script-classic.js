@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (t.conferences && t.conferences.items) {
             const dropdownContainer = document.getElementById('conf-dropdown-menu');
             if (dropdownContainer) {
-                dropdownContainer.innerHTML = t.conferences.items.map((item, index) => {
-                    return `<a href="#conference-card-${index}">${item.title}</a>`;
+                dropdownContainer.innerHTML = t.conferences.items.map(item => {
+                    return `<a href="conference.html?slug=${item.slug}">${item.title}</a>`;
                 }).join('');
             }
         }
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!container) return;
 
         // Detect if this is the conferences section
-        const isConferences = id === 'conferences-list';
+        const isConferences = id === 'scientific-mediation-list';
 
         container.innerHTML = items.map((item, index) => {
             // Génération du bloc vidéo uniquement si ce n'est PAS les conférences
@@ -312,14 +312,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderConferences(items) {
-        const container = document.getElementById('conferences-list');
+        const container = document.getElementById('scientific-mediation-list');
         if (!container) return;
 
         container.innerHTML = items.map((conf, index) => {
-            // Determine icon based on type
-            const isWorkshop = conf.title.toLowerCase().includes('workshop') || conf.title.toLowerCase().includes('atelier');
-            const icon = isWorkshop ? 'fa-chalkboard-teacher' : 'fa-microphone-alt';
-            const typeLabel = isWorkshop ? 'Workshop' : 'Talk';
+            // Determine icon and badge based on type
+            let mainIconClass = 'fa-microphone-alt';
+            let typeBadgeClass = 'type';
+            let typeLabel = 'Talk'; // Default
+
+            // Use data-i18n logic helper if available, or simple check
+            const isFr = document.documentElement.lang === 'fr';
+
+            if (conf.type === 'workshop' || conf.title.toLowerCase().includes('workshop') || conf.title.toLowerCase().includes('atelier')) {
+                mainIconClass = 'fa-chalkboard-teacher';
+                typeBadgeClass = 'type workshop';
+                typeLabel = isFr ? 'Atelier' : 'Workshop';
+            } else if (conf.type === 'congress') {
+                mainIconClass = 'fa-users';
+                typeBadgeClass = 'type congress';
+                typeLabel = isFr ? 'Congrès Scientifique' : 'Scientific Congress';
+            } else {
+                typeLabel = isFr ? 'Conférence' : 'Talk';
+            }
 
             // Video badge if available
             const videoBadge = conf.video ? `
@@ -331,10 +346,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="conference-card" id="conference-card-${index}">
                     <div class="conf-card-header">
                         <div class="conf-icon">
-                            <i class="fas ${icon}"></i>
+                            <i class="fas ${mainIconClass}"></i>
                         </div>
                         <div class="conf-badges">
-                            <span class="conf-badge type">${typeLabel}</span>
+                            <span class="conf-badge ${typeBadgeClass}">${typeLabel}</span>
                             ${videoBadge}
                         </div>
                     </div>

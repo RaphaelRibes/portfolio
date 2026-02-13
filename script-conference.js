@@ -20,6 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
         renderConference(currentLang, slug);
     }
 
+    // Render dropdowns
+    if (typeof translations !== 'undefined') {
+        renderDropdowns(currentLang);
+    }
+
     // --- Gestionnaires d'événements ---
 
     if (themeToggle) {
@@ -35,6 +40,9 @@ document.addEventListener('DOMContentLoaded', () => {
             applyLanguage(currentLang);
             if (slug && typeof translations !== 'undefined') {
                 renderConference(currentLang, slug);
+            }
+            if (typeof translations !== 'undefined') {
+                renderDropdowns(currentLang);
             }
         });
     }
@@ -85,6 +93,32 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    function renderDropdowns(lang) {
+        const t = translations[lang];
+        if (!t) return;
+
+        // Scientific Mediation Dropdown
+        if (t.conferences && t.conferences.items) {
+            const dropdownContainer = document.getElementById('conf-dropdown-menu');
+            if (dropdownContainer) {
+                dropdownContainer.innerHTML = t.conferences.items.map(item => {
+                    return `<a href="conference.html?slug=${item.slug}">${item.title}</a>`;
+                }).join('');
+            }
+        }
+
+        // Projects Dropdown
+        if (t.projects && t.projects.items) {
+            const projectsDropdown = document.getElementById('projects-dropdown-menu');
+            if (projectsDropdown) {
+                projectsDropdown.innerHTML = t.projects.items.map((item, index) => {
+                    // Link back to the main page anchors
+                    return `<a href="index.html#projects-list-item-${index}">${item.title}</a>`;
+                }).join('');
+            }
+        }
+    }
+
     function renderConference(lang, conferenceSlug) {
         const container = document.getElementById('conference-content');
         if (!container) return;
@@ -116,44 +150,136 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h1 class="conference-title">${conference.title}</h1>
             </header>
 
-            <div class="conference-body">
-                <p class="conference-description">${simpleMarkdownToHtml(conference.fullDescription || conference.description)}</p>
+                <div class="conference-body">
+                    ${conference.banner ? `
+                    <div class="conference-banner-container">
+                        <img src="${conference.banner}" alt="${conference.title} Banner" class="conference-banner">
+                    </div>
+                    ` : ''}
 
-                ${conference.video ? `
-                <div class="conference-video">
-                    <h2><i class="fas fa-video"></i> ${lang === 'fr' ? 'Vidéo de la conférence' : 'Conference Recording'}</h2>
-                    <div class="video-wrapper">
-                        <iframe 
-                            src="https://www.youtube.com/embed/${conference.video}" 
-                            title="${conference.title}"
-                            frameborder="0" 
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen>
-                        </iframe>
+                    <p class="conference-description">${simpleMarkdownToHtml(conference.fullDescription || conference.description)}</p>
+
+                    ${conference.images ? `
+                    <div class="conference-gallery">
+                        <h2><i class="fas fa-images"></i> ${lang === 'fr' ? 'Galerie Photos' : 'Photo Gallery'}</h2>
+                        <div class="gallery-scroll">
+                            ${conference.images.map((img, index) => `
+                                <div class="gallery-item">
+                                    <img src="${img}" alt="${conference.title} image" loading="lazy" class="gallery-trigger" data-index="${index}">
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    ${conference.video ? `
+                    <div class="conference-video">
+                        <h2><i class="fas fa-video"></i> ${lang === 'fr' ? 'Vidéo de la conférence' : 'Conference Recording'}</h2>
+                        <div class="video-wrapper">
+                            <iframe 
+                                src="https://www.youtube.com/embed/${conference.video}" 
+                                title="${conference.title}"
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                            </iframe>
+                        </div>
+                    </div>
+                    ` : ''}
+
+                    <div class="conference-resources">
+                        <h2><i class="fas fa-link"></i> ${lang === 'fr' ? 'Ressources' : 'Resources'}</h2>
+                        <div class="resource-links">
+                            ${conference.url ? `
+                            <a href="${conference.url}" target="_blank" class="resource-link">
+                                <i class="fab fa-gitlab"></i>
+                                ${lang === 'fr' ? 'Voir les slides et ressources' : 'View slides and resources'}
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            ` : ''}
+                            ${conference.video ? `
+                            <a href="https://www.youtube.com/watch?v=${conference.video}" target="_blank" class="resource-link">
+                                <i class="fab fa-youtube"></i>
+                                ${lang === 'fr' ? 'Regarder sur YouTube' : 'Watch on YouTube'}
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            ` : ''}
+                        </div>
                     </div>
                 </div>
-                ` : ''}
 
-                <div class="conference-resources">
-                    <h2><i class="fas fa-link"></i> ${lang === 'fr' ? 'Ressources' : 'Resources'}</h2>
-                    <div class="resource-links">
-                        ${conference.url ? `
-                        <a href="${conference.url}" target="_blank" class="resource-link">
-                            <i class="fab fa-gitlab"></i>
-                            ${lang === 'fr' ? 'Voir les slides et ressources' : 'View slides and resources'}
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        ` : ''}
-                        ${conference.video ? `
-                        <a href="https://www.youtube.com/watch?v=${conference.video}" target="_blank" class="resource-link">
-                            <i class="fab fa-youtube"></i>
-                            ${lang === 'fr' ? 'Regarder sur YouTube' : 'Watch on YouTube'}
-                            <i class="fas fa-external-link-alt"></i>
-                        </a>
-                        ` : ''}
-                    </div>
+                <!-- Lightbox Structure -->
+                <div id="lightbox" class="lightbox">
+                    <span class="lightbox-close">&times;</span>
+                    <button class="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+                    <img class="lightbox-content" id="lightbox-img">
+                    <button class="lightbox-next"><i class="fas fa-chevron-right"></i></button>
                 </div>
-            </div>
-        `;
+            `;
+
+        // Setup Lightbox logic if images exist
+        if (conference.images && conference.images.length > 0) {
+            setupLightbox(conference.images);
+        }
+    }
+
+    function setupLightbox(images) {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.lightbox-close');
+        const prevBtn = document.querySelector('.lightbox-prev');
+        const nextBtn = document.querySelector('.lightbox-next');
+        const triggers = document.querySelectorAll('.gallery-trigger');
+
+        let currentIndex = 0;
+
+        function showImage(index) {
+            if (index < 0) index = images.length - 1;
+            if (index >= images.length) index = 0;
+            currentIndex = index;
+            lightboxImg.src = images[currentIndex];
+        }
+
+        triggers.forEach(trigger => {
+            trigger.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default behavior
+                const index = parseInt(trigger.getAttribute('data-index'));
+                showImage(index);
+                lightbox.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Prevent scrolling background
+            });
+        });
+
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+            document.body.style.overflow = ''; // Restore scrolling
+            lightboxImg.src = ''; // Clear image
+        }
+
+        closeBtn.addEventListener('click', closeLightbox);
+
+        // Close on clean background click (optional)
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex - 1);
+        });
+
+        nextBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            showImage(currentIndex + 1);
+        });
+
+        // Keyboard Navigation (attached handling only when lightbox is visible)
+        document.addEventListener('keydown', (e) => {
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') showImage(currentIndex - 1);
+                if (e.key === 'ArrowRight') showImage(currentIndex + 1);
+            }
+        });
     }
 });

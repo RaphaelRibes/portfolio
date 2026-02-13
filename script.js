@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (t.experience) renderTimeline('experience-list', t.experience.items);
         if (t.education) renderTimeline('education-list', t.education.items);
         if (t.volunteering) renderTimeline('volunteering-list', t.volunteering.items);
-        if (t.conferences) renderTimeline('conferences-list', t.conferences.items);
+        if (t.conferences) renderTimeline('scientific-mediation-list', t.conferences.items);
 
         // 3. Skills (EXPLORATEUR DE FICHIERS MIS À JOUR)
         if (t.skills) {
