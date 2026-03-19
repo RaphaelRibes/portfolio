@@ -111,6 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateLink('linkedin-link', t.contact.linkedin_url);
             updateLink('github-link', "https://github.com/" + t.contact.github);
             updateLink('gitlab-link', t.contact.gitlab_url);
+            updateLink('orcid-link', t.contact.orcid_url);
             updateLink('email-link', "mailto:" + t.contact.email);
             updateLink('cv-link', t.contact.cv_url);
         }
@@ -273,16 +274,57 @@ document.addEventListener('DOMContentLoaded', () => {
                 `<span class="project-tech-tag">${t}</span>`
             ).join('');
 
+            // Build links dynamically based on available URLs
+            let linksHTML = '';
+            if (project.github_url) {
+                linksHTML += `
+                    <a href="${project.github_url}" target="_blank" class="project-link github">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>`;
+            }
+            if (project.prefix_url) {
+                linksHTML += `
+                    <a href="${project.prefix_url}" target="_blank" class="project-link prefix">
+                        <i class="fas fa-box"></i> prefix.dev
+                    </a>`;
+            }
+            if (project.pixi_url) {
+                linksHTML += `
+                    <a href="${project.pixi_url}" target="_blank" class="project-link pixi">
+                        <i class="fas fa-external-link-alt"></i> Pixi Docs
+                    </a>`;
+            }
+            if (project.cargo_url) {
+                linksHTML += `
+                    <a href="${project.cargo_url}" target="_blank" class="project-link cargo">
+                        <i class="fab fa-rust"></i> Cargo
+                    </a>`;
+            }
+            if (project.bioconda_url) {
+                linksHTML += `
+                    <a href="${project.bioconda_url}" target="_blank" class="project-link bioconda">
+                        <i class="fas fa-leaf"></i> Bioconda
+                    </a>`;
+            }
+
+            // Extract owner/repo for star count element
+            const repoPath = project.github_url ? project.github_url.replace('https://github.com/', '') : '';
+
             return `
                 <div class="project-card" id="projects-list-item-${index}">
                     <div class="project-header">
                         <div class="project-icon">
-                            <i class="fas fa-cube"></i>
+                            <i class="fas ${project.icon || 'fa-cube'}"></i>
                         </div>
                         <div>
                             <h3 class="project-title">${project.title}</h3>
                             <p class="project-subtitle">${project.subtitle}</p>
                         </div>
+                        ${repoPath ? `
+                        <a href="${project.github_url}/stargazers" target="_blank" class="github-stars-badge" data-repo="${repoPath}" title="GitHub Stars">
+                            <i class="fas fa-star"></i>
+                            <span class="stars-count">—</span>
+                        </a>` : ''}
                     </div>
                     
                     <p class="project-description">${project.description}</p>
@@ -296,19 +338,32 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
 
                     <div class="project-links">
-                        <a href="${project.github_url}" target="_blank" class="project-link github">
-                            <i class="fab fa-github"></i> GitHub
-                        </a>
-                        <a href="${project.prefix_url}" target="_blank" class="project-link prefix">
-                            <i class="fas fa-box"></i> prefix.dev
-                        </a>
-                        <a href="${project.pixi_url}" target="_blank" class="project-link pixi">
-                            <i class="fas fa-external-link-alt"></i> Pixi Docs
-                        </a>
+                        ${linksHTML}
                     </div>
                 </div>
             `;
         }).join('');
+
+        // Fetch star counts after rendering
+        fetchGitHubStars();
+    }
+
+    function fetchGitHubStars() {
+        const badges = document.querySelectorAll('.github-stars-badge[data-repo]');
+        badges.forEach(badge => {
+            const repo = badge.getAttribute('data-repo');
+            if (!repo) return;
+
+            fetch(`https://api.github.com/repos/${repo}`)
+                .then(res => res.json())
+                .then(data => {
+                    if (typeof data.stargazers_count === 'number') {
+                        const countEl = badge.querySelector('.stars-count');
+                        if (countEl) countEl.textContent = data.stargazers_count;
+                    }
+                })
+                .catch(() => { /* silently fail */ });
+        });
     }
 
     function renderConferences(items) {

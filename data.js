@@ -134,7 +134,8 @@ const translations = {
             "items": [
                 {
                     "title": "Pixitainer",
-                    "subtitle": "Pixi Extension for Apptainer Containers",
+                    "icon": "fa-cube",
+                    "subtitle": "Pixi Extension for Workspace Containerization",
                     "description": "Bridge the gap between fast-paced Pixi development and robust Apptainer production environments. Freeze your environment into a production-ready container with a single command: pixi containerize",
                     "features": [
                         { "icon": "fa-rocket", "text": "Seamless Mode", "detail": "Run commands through the container as if pixi was not even there" },
@@ -145,6 +146,21 @@ const translations = {
                     "prefix_url": "https://prefix.dev/channels/raphaelribes/packages/pixitainer",
                     "pixi_url": "https://pixi.prefix.dev/latest/",
                     "tech": ["Apptainer", "Singularity", "Pixi", "Reproducibility", "HPC"]
+                },
+                {
+                    "title": "FastDedup",
+                    "icon": "fa-bolt",
+                    "subtitle": "FASTX PCR Deduplication Tool",
+                    "description": "A fast and memory-efficient FASTX PCR deduplication tool written in Rust. Uses zero-allocation sequence parsing and non-cryptographic high-speed hashing for lightning-fast deduplication.",
+                    "features": [
+                        { "icon": "fa-bolt", "text": "Fast & Memory Efficient", "detail": "Zero-allocation parsing with high-speed xxh3 hashing and auto-scaling cache" },
+                        { "icon": "fa-sync-alt", "text": "Incremental & Auto-Recovery", "detail": "Appends new sequences, pre-loads existing hashes, and auto-recovers from crashes" },
+                        { "icon": "fa-file-archive", "text": "Compressed Formats", "detail": "Transparently reads and writes both uncompressed and GZIP compressed FASTQ/FASTA" }
+                    ],
+                    "github_url": "https://github.com/RaphaelRibes/FastDedup",
+                    "cargo_url": "https://crates.io/crates/fastdedup",
+                    "bioconda_url": "https://anaconda.org/channels/bioconda/packages/fdedup/overview",
+                    "tech": ["Rust", "Bioinformatics", "FASTQ", "Deduplication", "HPC"]
                 }
             ]
         },
@@ -157,6 +173,7 @@ const translations = {
             "github": "RaphaelRibes",
             "gitlab": "RaphaelRibes",
             "gitlab_url": "https://gitlab.etu.umontpellier.fr/RaphaelRibes",
+            "orcid_url": "https://orcid.org/0009-0001-8403-0869",
             "steam_url": "https://steamcommunity.com/id/JustaPlayer_/"
         }
     },
@@ -295,7 +312,8 @@ const translations = {
             "items": [
                 {
                     "title": "Pixitainer",
-                    "subtitle": "Extension Pixi pour Conteneurs Apptainer",
+                    "icon": "fa-cube",
+                    "subtitle": "Extension Pixi pour la Conteneurisation de Worskapce",
                     "description": "Combinez le développement rapide avec Pixi et la robustesse d'Apptainer pour la production. Gelez votre environnement dans un conteneur prêt pour la production avec une seule commande : pixi containerize",
                     "features": [
                         { "icon": "fa-rocket", "text": "Mode Transparent", "detail": "Exécutez des commandes via le conteneur comme si pixi n'était pas là" },
@@ -306,6 +324,21 @@ const translations = {
                     "prefix_url": "https://prefix.dev/channels/raphaelribes/packages/pixitainer",
                     "pixi_url": "https://pixi.prefix.dev/latest/",
                     "tech": ["Apptainer", "Singularity", "Pixi", "Reproducibility", "HPC"]
+                },
+                {
+                    "title": "FastDedup",
+                    "icon": "fa-bolt",
+                    "subtitle": "Outil de Déduplication PCR FASTX",
+                    "description": "Un outil de déduplication PCR FASTX écrit en Rust, rapide et économe en mémoire. Utilise un parsing de séquences sans allocation et un hachage non-cryptographique haute performance pour une déduplication ultra-rapide.",
+                    "features": [
+                        { "icon": "fa-bolt", "text": "Rapide & Économe", "detail": "Parsing sans allocation avec hachage xxh3 haute vitesse et cache auto-dimensionné" },
+                        { "icon": "fa-sync-alt", "text": "Incrémental & Auto-Récupération", "detail": "Ajoute les nouvelles séquences, pré-charge les hashes existants et récupère automatiquement après un crash" },
+                        { "icon": "fa-file-archive", "text": "Formats Compressés", "detail": "Lit et écrit de manière transparente les fichiers FASTQ/FASTA compressés en GZIP" }
+                    ],
+                    "github_url": "https://github.com/RaphaelRibes/FastDedup",
+                    "cargo_url": "https://crates.io/crates/fastdedup",
+                    "bioconda_url": "https://anaconda.org/channels/bioconda/packages/fdedup/overview",
+                    "tech": ["Rust", "Bioinformatique", "FASTQ", "Déduplication", "HPC"]
                 }
             ]
         },
@@ -318,6 +351,7 @@ const translations = {
             "github": "RaphaelRibes",
             "gitlab": "RaphaelRibes",
             "gitlab_url": "https://gitlab.etu.umontpellier.fr/RaphaelRibes",
+            "orcid_url": "https://orcid.org/0009-0001-8403-0869",
             "steam_url": "https://steamcommunity.com/id/JustaPlayer_/"
         }
     }

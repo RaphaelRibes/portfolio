@@ -476,26 +476,9 @@ body {
     overflow: hidden;
 }
 
-.project-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--accent-color), #a855f7, #ec4899);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px var(--shadow-color);
-    border-color: var(--accent-color);
-}
-
-.project-card:hover::before {
-    opacity: 1;
+    box-shadow: 0 10px 15px var(--shadow-color);
 }
 
 .project-header {
@@ -609,6 +592,42 @@ body {
     letter-spacing: 0.3px;
 }
 
+/* --- GitHub Stars Badge --- */
+.github-stars-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: auto;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+    color: #1a1a1a;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.github-stars-badge i {
+    font-size: 0.85rem;
+}
+
+.github-stars-badge:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+[data-theme="dark"] .github-stars-badge {
+    background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+    color: #fef3c7;
+}
+
+[data-theme="dark"] .github-stars-badge:hover {
+    box-shadow: 0 4px 12px rgba(217, 119, 6, 0.5);
+}
+
 .project-links {
     display: flex;
     flex-wrap: wrap;
@@ -665,6 +684,28 @@ body {
     background: transparent;
     border-color: var(--accent-color);
     color: var(--accent-color);
+}
+
+.project-link.cargo {
+    background-color: #d2492f;
+    color: #fff;
+}
+
+.project-link.cargo:hover {
+    background: transparent;
+    border-color: #d2492f;
+    color: #d2492f;
+}
+
+.project-link.bioconda {
+    background-color: #24af00;
+    color: #fff;
+}
+
+.project-link.bioconda:hover {
+    background: transparent;
+    border-color: #24af00;
+    color: #24af00;
 }
 
 .project-link i {
