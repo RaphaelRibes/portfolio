@@ -83,9 +83,19 @@ const translations = {
             "title": "Scientific Mediation",
             "items": [
                 {
+                    "date": "May 12, 2026",
+                    "title": "PIXI Training: Fast, Modern, and Reproducible Package Management",
+                    "location": "Salle Passiflore (Agropolis), Montpellier",
+                    "slug": "pixi-training-rado-2026",
+                    "description": "Training session dedicated to PIXI, a fast, modern, and reproducible package manager designed for users and developers of all backgrounds.",
+                    "fullDescription": "A training session organized by the [Réseau d’Analyse de Données (RADO)](https://rado.pages.ird.fr/website/) focusing on PIXI. The session will cover how to use this fast, modern, and reproducible package management tool suitable for developers and users from all backgrounds.\n\n📅 Date: May 12, 2026\n🕙 Time: 10:00 AM - 12:00 PM\n📍 Location: Salle Passiflore (Agropolis), Montpellier\n\nRegister via the provided link.",
+                    "url": "https://drive.ird.fr/s/ABQnJ87ybbaHikd",
+                    "linkText": "Registration link"
+                },
+                {
                     "date": "Feb 2-3, 2026",
                     "title": "Pixi Workshop - Montpellier Omics Days (14th Edition)",
-                    "location": "Montpellier",
+                    "location": "Faculty of Science, Montpellier",
                     "slug": "pixi-workshop-mods2026",
                     "description": "A hands-on workshop to master Pixi, the next-generation package and environment manager. From project initialization to containerization with Pixitainer.",
                     "fullDescription": "This practical workshop guides participants through the fundamentals of Pixi to advanced use cases, including workspace containerization with Pixitainer.\n\n**Learning Objectives:**\n- Initialize a Pixi project\n- Manage conda and PyPI dependencies\n- Create and automate simple tasks\n- Understand the structure of a real project\n- Containerize a project with Pixitainer\n\n**Exercises:**\n- Exercise 1: Pédiluve (Getting started)\n- Exercise 2: Grand Bassin (Advanced usage)",
@@ -95,7 +105,7 @@ const translations = {
                 {
                     "date": "Feb 2-3, 2026",
                     "title": "Organisation of the Montpellier OMICs Days 2026",
-                    "location": "Montpellier",
+                    "location": "Faculty of Science, Montpellier",
                     "slug": "mods2026-organisation",
                     "type": "congress",
                     "banner": "images/logomods.png",
@@ -112,7 +122,7 @@ const translations = {
                 {
                     "date": "Oct 30, 2025",
                     "title": "Reproducibility within Reach",
-                    "location": "Montpellier",
+                    "location": "Faculty of Science, Montpellier",
                     "slug": "reproducibility-within-reach",
                     "description": "Addressed the challenges of reproducibility (\"It Works on My Machine\"). Introduced Pixi as a fast, user-friendly, and isolated tool that combines features from Conda, Cargo, and CMake.",
                     "fullDescription": "This talk explored the imperative of reproducibility in computational science. Starting from the infamous \"It Works on My Machine\" problem—caused by version mismatches and dependency conflicts. I reviewed current solutions (requirements.txt, Poetry, Conda, Singularity, GUIX) and their trade-offs. I then introduced Pixi, a tool combining multi-language package management (like Conda), lockfile-based project management (like uv and Cargo), and task automation (like Makefile). The presentation included a live demonstration analyzing FASTQ files and building k-mer graphs, and concluded with a discussion on long-term deployment challenges.",
@@ -160,6 +170,7 @@ const translations = {
                     "github_url": "https://github.com/RaphaelRibes/FastDedup",
                     "cargo_url": "https://crates.io/crates/fastdedup",
                     "bioconda_url": "https://anaconda.org/channels/bioconda/packages/fdedup/overview",
+                    "bioarxiv_url": "https://doi.org/10.64898/2026.04.29.721745",
                     "tech": ["Rust", "Bioinformatics", "FASTQ", "Deduplication", "HPC"]
                 }
             ]
@@ -261,9 +272,19 @@ const translations = {
             "title": "Médiation Scientifique",
             "items": [
                 {
+                    "date": "12 Mai 2026",
+                    "title": "Formation PIXI : Outil de gestion de paquets",
+                    "location": "Salle Passiflore (Agropolis), Montpellier",
+                    "slug": "pixi-training-rado-2026",
+                    "description": "Formation dédiée à PIXI, un outil de gestion de paquets rapide, moderne et reproductible, conçu pour les utilisateurs et développeurs de tous horizons.",
+                    "fullDescription": "Une formation organisée par l'équipe d'animation du [Réseau d’Analyse de Données (RADO)](https://rado.pages.ird.fr/website/). Cette session est dédiée à PIXI, un outil de gestion de paquets rapide, moderne et reproductible, conçu pour les utilisateurs et développeurs de tous horizons.\n\n📅 Date : 12 mai 2026\n🕙 Heure : 10h00 - 12h00\n📍 Lieu : Salle Passiflore (Agropolis), Montpellier\n\nMerci de confirmer votre participation en vous inscrivant via le lien fourni.",
+                    "url": "https://drive.ird.fr/s/ABQnJ87ybbaHikd",
+                    "linkText": "Lien d'inscription"
+                },
+                {
                     "date": "2-3 Fév 2026",
                     "title": "Atelier Pixi - Montpellier Omics Days (14ème édition)",
-                    "location": "Montpellier",
+                    "location": "Faculté des Sciences, Montpellier",
                     "slug": "pixi-workshop-mods2026",
                     "description": "Un atelier pratique pour maîtriser Pixi, le gestionnaire d'environnements et de packages nouvelle génération. De l'initialisation de projet à la conteneurisation avec Pixitainer.",
                     "fullDescription": "Cet atelier pratique guide les participants à travers les fondamentaux de Pixi jusqu'aux cas d'utilisation avancés, incluant la conteneurisation de workspaces avec Pixitainer.\n\n**Objectifs pédagogiques :**\n- Initialiser un projet Pixi\n- Gérer des dépendances conda et PyPI\n- Créer et automatiser une tâche simple\n- Comprendre la structure d'un projet réel\n- Conteneuriser un projet avec Pixitainer\n\n**Exercices :**\n- Exercice 1 : Pédiluve (Prise en main)\n- Exercice 2 : Grand Bassin (Usage avancé)",
@@ -273,7 +294,7 @@ const translations = {
                 {
                     "date": "2-3 Fév 2026",
                     "title": "Organisation des Montpellier OMICs Days 2026",
-                    "location": "Montpellier",
+                    "location": "Faculté des Sciences, Montpellier",
                     "slug": "mods2026-organisation",
                     "type": "congress",
                     "banner": "images/logomods.png",
@@ -290,7 +311,7 @@ const translations = {
                 {
                     "date": "30 Oct 2025",
                     "title": "La reproductibilité à portée de main",
-                    "location": "Montpellier",
+                    "location": "Faculté des Sciences, Montpellier",
                     "slug": "reproducibility-within-reach",
                     "description": "Aborde les défis de la reproductibilité (\"Ça marche sur ma machine\"). Introduction de Pixi comme un outil rapide, convivial et isolé, combinant les fonctionnalités de Conda, Cargo et CMake.",
                     "fullDescription": "Cette présentation a exploré l'impératif de la reproductibilité en science. Partant du fameux problème \"Ça marche sur ma machine\", causé par les mauvaises versions et conflits de dépendances. J'ai passé en revue les solutions actuelles (requirements.txt, Poetry, Conda, Singularity, GUIX) et leurs compromis. J'ai ensuite présenté Pixi, un outil combinant la gestion de paquets multi-langages (comme Conda et pypi), la gestion de projet par lockfile (comme uv et Cargo), et l'automatisation des tâches (comme Makefile). La présentation incluait une démonstration live d'analyse de fichiers FASTQ et de construction de graphes de k-mers, et s'est conclue par une discussion sur les limitations du déploiement à long terme.",
@@ -338,6 +359,7 @@ const translations = {
                     "github_url": "https://github.com/RaphaelRibes/FastDedup",
                     "cargo_url": "https://crates.io/crates/fastdedup",
                     "bioconda_url": "https://anaconda.org/channels/bioconda/packages/fdedup/overview",
+                    "bioarxiv_url": "https://doi.org/10.64898/2026.04.29.721745",
                     "tech": ["Rust", "Bioinformatique", "FASTQ", "Déduplication", "HPC"]
                 }
             ]

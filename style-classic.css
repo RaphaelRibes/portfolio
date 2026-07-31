@@ -708,6 +708,18 @@ body {
     color: #24af00;
 }
 
+.project-link.bioarxiv {
+    background-color: #b31b1b;
+    color: #fff;
+    margin-left: auto;
+}
+
+.project-link.bioarxiv:hover {
+    background: transparent;
+    border-color: #b31b1b;
+    color: #b31b1b;
+}
+
 .project-link i {
     font-size: 1rem;
 }

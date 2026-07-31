@@ -51,12 +51,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /**
      * Convert simple markdown syntax to HTML
-     * Supports: **bold**, newlines
+     * Supports: **bold**, newlines, and [links](url)
      */
     function simpleMarkdownToHtml(text) {
         if (!text) return '';
         // Convert **bold** to <strong>bold</strong>
         let html = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+        // Convert [text](url) to <a href="url" target="_blank">text</a>
+        html = html.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" target="_blank">$1</a>');
         // Convert newlines to <br>
         html = html.replace(/\n/g, '<br>');
         return html;

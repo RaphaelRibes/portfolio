@@ -306,6 +306,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas fa-leaf"></i> Bioconda
                     </a>`;
             }
+            if (project.bioarxiv_url) {
+                linksHTML += `
+                    <a href="${project.bioarxiv_url}" target="_blank" class="project-link bioarxiv">
+                        <i class="fas fa-file-alt"></i> bioRxiv
+                    </a>`;
+            }
 
             // Extract owner/repo for star count element
             const repoPath = project.github_url ? project.github_url.replace('https://github.com/', '') : '';
