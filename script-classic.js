@@ -294,6 +294,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         <i class="fas fa-external-link-alt"></i> Pixi Docs
                     </a>`;
             }
+            if (project.portfolio_url) {
+                linksHTML += `
+                    <a href="${project.portfolio_url}" class="project-link portfolio">
+                        <i class="fas fa-eye"></i> Project Page
+                    </a>`;
+            }
             if (project.cargo_url) {
                 linksHTML += `
                     <a href="${project.cargo_url}" target="_blank" class="project-link cargo">

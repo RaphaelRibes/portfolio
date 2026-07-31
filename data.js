@@ -153,6 +153,7 @@ const translations = {
                         { "icon": "fa-cogs", "text": "Customizable", "detail": "Choose your base image (Ubuntu, etc.) and specific environments" }
                     ],
                     "github_url": "https://github.com/RaphaelRibes/pixitainer",
+                    "portfolio_url": "pixitainer.html",
                     "prefix_url": "https://prefix.dev/channels/raphaelribes/packages/pixitainer",
                     "pixi_url": "https://pixi.prefix.dev/latest/",
                     "tech": ["Apptainer", "Singularity", "Pixi", "Reproducibility", "HPC"]
@@ -342,6 +343,7 @@ const translations = {
                         { "icon": "fa-cogs", "text": "Personnalisable", "detail": "Choisissez votre image de base (Ubuntu, etc.) et environnements spécifiques" }
                     ],
                     "github_url": "https://github.com/RaphaelRibes/pixitainer",
+                    "portfolio_url": "pixitainer.html",
                     "prefix_url": "https://prefix.dev/channels/raphaelribes/packages/pixitainer",
                     "pixi_url": "https://pixi.prefix.dev/latest/",
                     "tech": ["Apptainer", "Singularity", "Pixi", "Reproducibility", "HPC"]

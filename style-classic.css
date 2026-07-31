@@ -675,6 +675,24 @@ body {
     color: #f59e0b;
 }
 
+.project-link.portfolio {
+    order: 99;
+    margin-left: auto;
+    background: #001838;
+    color: #FFD432;
+}
+
+.project-link.portfolio:hover {
+    background: transparent;
+    border-color: #001838;
+    color: #001838;
+}
+
+[data-theme="dark"] .project-link.portfolio:hover {
+    border-color: #FFD432;
+    color: #FFD432;
+}
+
 .project-link.pixi {
     background: var(--accent-color);
     color: #fff;
