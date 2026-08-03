@@ -4,6 +4,16 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Pixitainer — containerize Pixi workspaces with Apptainer, Singularity, or Docker.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://raphaelrib.es/pixitainer.html">
+  <meta property="og:title" content="Pixitainer — containerize your Pixi workspace">
+  <meta property="og:description" content="Turn Pixi workspaces and standalone conda tools into portable Apptainer, Singularity, or Docker images.">
+  <meta property="og:image" content="https://raphaelrib.es/images/pixitainer-banner.png">
+  <meta property="og:image:alt" content="Pixitainer container robot and Pixi graffiti artwork">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pixitainer — containerize your Pixi workspace">
+  <meta name="twitter:description" content="Turn Pixi workspaces and standalone conda tools into portable container images.">
+  <meta name="twitter:image" content="https://raphaelrib.es/images/pixitainer-banner.png">
   <title>Pixitainer — containerize your Pixi workspace</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -51,7 +61,7 @@ pixi global install -c https://prefix.dev/raphaelribes -c https://prefix.dev/con
 
 <span class="comment"># Docker</span>
 pixi global install -c https://prefix.dev/raphaelribes -c https://prefix.dev/conda-forge pixitainer-docker</pre><div class="backend-grid"><article class="backend"><h3>Apptainer</h3><p>Build a SIF image with <code>pixi containerize</code>. Default output: <code>pixitainer.sif</code>.</p></article><article class="backend"><h3>Singularity</h3><p>Target existing Singularity installations with <code>pixi containerize-singularity</code>.</p></article><article class="backend"><h3>Docker</h3><p>Generate and build a Docker image with <code>pixi containerize-docker</code>, including BuildKit options.</p></article></div></div></section>
-<section class="tool-section"><div class="section"><div class="section-intro"><div class="section-label">No manifest required</div><h2>Package a tool from anywhere.</h2><p>Need a container for a tool you found five minutes ago? Pull it directly from a conda channel, from any directory, without creating a Pixi project first. Bundle a complete preprocessing toolkit in one image, ready for the next machine or cluster.</p></div><div class="terminal tool-terminal" aria-label="Pixitainer tool commands"><div class="terminal-bar"><span class="dots"><i></i><i></i><i></i></span>~/projects/my-workspace</div><pre><span class="prompt">$</span> <span class="command">pixi containerize tool -c bioconda fastp fastqc bowtie2 seqkit -o preprocessing.sif</span>
+<section class="tool-section"><div class="section"><div class="section-intro"><div class="section-label">No manifest ? No problems !</div><h2>Package a tool from anywhere.</h2><p>Need a container for a tool you found five minutes ago? Pull it directly from a conda channel, from any directory, without creating a Pixi project first. Bundle a complete preprocessing toolkit in one image, ready for the next machine or cluster.</p></div><div class="terminal tool-terminal" aria-label="Pixitainer tool commands"><div class="terminal-bar"><span class="dots"><i></i><i></i><i></i></span>~/projects/my-workspace</div><pre><span class="prompt">$</span> <span class="command">pixi containerize tool -c bioconda fastp fastqc bowtie2 seqkit -o preprocessing.sif</span>
 <span class="output">✓ preprocessing.sif</span>
 
 <span class="prompt">$</span> <span class="command">pixi containerize tool fastp=0.23.4</span>
