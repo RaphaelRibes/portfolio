@@ -1,10 +1,9 @@
 # Portfolio
 
-## Crédits
+## Credits
 
-Ce portfolio utilise les bibliothèques open source suivantes :
+This portfolio uses the following open source libraries:
 
-* [XP.css](https://botoxparty.github.io/XP.css/) par botoxparty - Licence MIT
-* [vis-network](https://visjs.github.io/vis-network/) - Licence MIT/Apache-2.0
+* [XP.css](https://botoxparty.github.io/XP.css/) by botoxparty - MIT License
 
-Le reste du code source de ce portfolio est mis à disposition sous licence MIT.
+All other source code in this portfolio is released under the MIT License.

@@ -76,6 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyLanguage(lang) {
         if (langToggle) langToggle.textContent = lang.toUpperCase();
+        html.lang = lang; // keep <html lang> in sync for :lang() selectors
         localStorage.setItem('lang', lang);
 
         // Mise à jour du texte "Back to Conferences"

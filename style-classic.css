@@ -6,7 +6,7 @@
     --timeline-line: #ccc;
     --shadow-color: rgba(0, 0, 0, 0.1);
     /* Image de fond mode CLAIR */
-    --hero-bg: url('images/hero-bg-light.png');
+    --hero-bg: url('images/hero-bg-light.webp');
     /* Filtre BLANC pour le mode clair (pour éclaircir l'image) */
     --hero-overlay: rgba(255, 255, 255, 0.85);
 }
@@ -19,7 +19,7 @@
     --timeline-line: #334155;
     --shadow-color: rgba(0, 0, 0, 0.3);
     /* Image de fond mode SOMBRE */
-    --hero-bg: url('images/hero-bg.png');
+    --hero-bg: url('images/hero-bg.webp');
     /* Filtre NOIR pour le mode sombre */
     --hero-overlay: rgba(0, 0, 0, 0.6);
 }

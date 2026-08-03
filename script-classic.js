@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function applyLanguage(lang) {
         if (langToggle) langToggle.textContent = lang.toUpperCase();
+        html.lang = lang; // keep <html lang> in sync for :lang() selectors and isFr checks
         localStorage.setItem('lang', lang);
     }
 
@@ -128,13 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const container = document.getElementById(id);
         if (!container) return;
 
-        // Detect if this is the conferences section
-        const isConferences = id === 'scientific-mediation-list';
+        const isFr = document.documentElement.lang === 'fr';
+        const detailsText = isFr ? 'Voir les détails' : 'View details';
 
         container.innerHTML = items.map((item, index) => {
-            // Génération du bloc vidéo uniquement si ce n'est PAS les conférences
+            // Génération du bloc vidéo si le post a une vidéo
             let videoHTML = '';
-            if (!isConferences && item.image && item.video) {
+            if (item.image && item.video) {
                 videoHTML = `
                     <div class="timeline-video-container">
                         <a href="https://www.youtube.com/watch?v=${item.video}" target="_blank" class="video-link">
@@ -156,17 +157,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 logoHTML = `<img src="${item.logo}" alt="Logo" class="timeline-logo">`;
             }
 
-            // Pour les conférences, le lien pointe vers la page de détail
             let linkHTML = '';
-            if (isConferences && item.slug) {
-                linkHTML = `
-                    <a href="conference.html?slug=${item.slug}" class="timeline-link">
-                        View details <i class="fas fa-arrow-right"></i>
-                    </a>`;
-            } else if (item.url) {
+            if (item.url) {
                 linkHTML = `
                     <a href="${item.url}" target="_blank" class="timeline-link">
-                        View details <i class="fas fa-arrow-right"></i>
+                        ${detailsText} <i class="fas fa-arrow-right"></i>
                     </a>`;
             }
 
@@ -406,7 +401,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Video badge if available
             const videoBadge = conf.video ? `
                 <span class="conf-badge video">
-                    <i class="fab fa-youtube"></i> Recording
+                    <i class="fab fa-youtube"></i> ${isFr ? 'Enregistrement' : 'Recording'}
                 </span>` : '';
 
             return `
@@ -434,7 +429,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     <div class="conf-card-footer">
                         <a href="conference.html?slug=${conf.slug}" class="conf-link">
-                            View details <i class="fas fa-arrow-right"></i>
+                            ${isFr ? 'Voir les détails' : 'View details'} <i class="fas fa-arrow-right"></i>
                         </a>
                     </div>
                 </div>
